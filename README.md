@@ -20,8 +20,8 @@ If you skip TASK_LEVEL, all level of tasks will be shown.
 
 `ac test *FILE* [*CONTEST_NAME*] [*TASK_LEVEL*]`
 
-	If the file name shows the task level(Ex. a.cpp), you can skip the task level. 
-	If the directory name is the contest number(Ex. 440/), you can skip the contest number.
+If the file name shows the task level(Ex. a.cpp), you can skip the task level. 
+If the directory name is the contest number(Ex. 440/), you can skip the contest number.
 
 - Submit file
 
