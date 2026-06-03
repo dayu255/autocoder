@@ -16,6 +16,12 @@ An AtCoder CLI tool written in Golang.
 
 If you skip TASK_LEVEL, all level of tasks will be shown.
 
+- Download test cases.
+
+`ac download *CONTEST_NAME* [*TASK_LEVEL*]`
+
+If you skil download, test cases will be downloaded at "ac test"
+
 - Run test case
 
 `ac test *FILE* [*CONTEST_NAME*] [*TASK_LEVEL*]`
