@@ -11,13 +11,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-
-
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "autocoder",
 	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains`,
+	Long:  `A longer description that spans multiple lines and likely contains`,
 
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Hello World!")
@@ -42,5 +40,3 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-

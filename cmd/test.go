@@ -10,6 +10,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const atcoderURL string = "https://atcoder.jp/contests/"
+
 // testCmd represents the test command
 var testCmd = &cobra.Command{
 	Use:   "test",
