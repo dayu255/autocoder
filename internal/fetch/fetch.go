@@ -1,7 +1,6 @@
 package fetch
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
