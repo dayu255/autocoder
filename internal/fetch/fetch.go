@@ -10,7 +10,7 @@ import (
 
 type Test struct {
 	Num     int
-	Type      string
+	Type    string
 	Content string
 }
 
@@ -19,9 +19,9 @@ func titleParse(title string) (num int, io string) {
 
 	switch token[1] {
 	case "Input":
-		io = "input"
+		io = "in"
 	case "Output":
-		io = "output"
+		io = "out"
 	default:
 		io = "unknown"
 	}
@@ -30,28 +30,29 @@ func titleParse(title string) (num int, io string) {
 	return
 }
 
-func Fetch(url string) []Test {
+func FetchTest(url string) ([]Test, error) {
 	client := http.Client{}
-	res, _ := client.Get(url)
+	res, err := client.Get(url)
+	if err != nil {
+		return nil, err
+	}
 
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	tests := make([]Test, 0, 12);
+	tests := make([]Test, 0, 12)
 
 	doc.Find(".part").Each(func(i int, s *goquery.Selection) {
 		title := s.Find("h3").Text()
 
 		if strings.Contains(title, "Sample Input") || strings.Contains(title, "Sample Output") {
 			content := s.Find("pre").Text()
-
 			n, t := titleParse(title)
-
-			tests = append(tests, Test{n ,t, content})
+			tests = append(tests, Test{n, t, content})
 		}
 	})
 
-	return tests
+	return tests, nil
 }

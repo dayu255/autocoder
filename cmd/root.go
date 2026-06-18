@@ -5,7 +5,6 @@ Copyright © 2026 dayu dayu@dayu.jp
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -18,7 +17,6 @@ var rootCmd = &cobra.Command{
 	Long:  `A longer description that spans multiple lines and likely contains`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Hello World!")
 	},
 }
 
